@@ -1,0 +1,43 @@
+
+.checkbox {
+    display: none;
+  }
+  .checkbox:checked ~ .switch::before {
+    transform: translateX(23px);
+  }
+  .switch {
+    height: 25px;
+    display: block;
+    border-radius: 20px;
+    background: var(--switch);
+    width: 50px;
+    padding: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+  }
+  .switch::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: var(--switch-before);
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: 0.2s;
+    will-change: transform;
+  }
+  .dark-mode {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .switch {
+      background: var(--switch);
+    }
+    .switch::before {
+      background: var(--switch-before);
+    }
+  }

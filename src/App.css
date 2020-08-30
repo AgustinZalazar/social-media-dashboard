@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--font);
+  background: var(--background);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram1: hsl(37, 97%, 70%);
+  --instagram2: hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --gray: #9b9ea7;
+
+  /* Dark Theme */
+
+  --VeryDarkBlue: hsl(230, 17%, 14%);
+  --VeryDarkBlue2: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlue: hsl(228, 28%, 20%);
+  --DesaturatedBlue: hsl(228, 34%, 66%);
+  --White: hsl(0, 0%, 100%);
+}
+.is-dark-mode {
+  --header: hsl(230, 17%, 14%);
+  --background: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlue: hsl(228, 28%, 20%);
+  --card: hsl(228, 28%, 20%);
+  --card-small: hsl(228, 28%, 20%);
+  --DesaturatedBlue: hsl(228, 34%, 66%);
+  --font: hsl(0, 0%, 100%);
+  --switch: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%) 0%,
+    hsl(146, 68%, 55%) 100%
+  );
+  --switch-before: hsl(230, 17%, 14%);
+}
+.is-light-mode{
+  --header: #f0f3fa;
+  --background: #fff;
+  --DarkDesaturatedBlue: hsl(228, 28%, 20%);
+  --DesaturatedBlue: hsl(228, 34%, 66%);
+  --font: #1d2029;
+  --card: #f0f3fa;
+  --card-small: #f0f3fa;
+  --switch: #9b9ea7;
+  --switch-before: #fff;
+}
+.wrapper {
+  padding: 0 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.grid {
+  display: grid;
+  row-gap: 25px;
+}
+
+.overview {
+  padding-bottom: 2em;
+}
+.overview h2 {
+  color: var(--gray);
+}
+
+@media screen and (min-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background);
+    color: var(--font);
   }
-  to {
-    transform: rotate(360deg);
+
+  .overview h2 {
+    color: var(--font);
   }
 }
